@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hide/Show password - Web monster4u</title>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    body{
+        top: 0;
+        left: 0;
+        background: #ccc;
+    }
+    .container{
+        width: 500px;
+        height: 300px;
+        margin: 200px auto 0;
+        padding-top: 10px;
+        background: #eee;
+        border-radius: 10px;
+        border: 1px solid #c5c4c4;
+        text-align: center;
+        box-shadow: -2px -2px 5px 2px rgba(0, 0, 0, 0.15),
+                    2px 2px 4px 2px rgba(0, 0, 0, 0.1);
+    }
+    .container div{
+        width: 100%;
+        height: 25%;
+        text-align: center;
+        position: relative;
+    }
+    .container .title{
+        display: block;
+        font-size: 25px;
+        font-family: sans-serif;
+        height: 30px;
+        padding-bottom: 50px;
+    }
+    .container .email,
+    .container .pass{
+        display: block;
+        position: relative;
+    }
+    .container div input[type='password'],
+    input[type='text']{
+        width: 70%;
+        height: 40px;
+        margin: 10px auto 0;
+        padding: 5px 40px 5px 5px;
+        font-size: 18;
+        border: 1px solid #efb57d;
+        outline: none;
+        border-radius: 5px;
+    }
+    .container div i{
+        position: absolute;
+        right: 100px;
+        bottom: 12px;
+        cursor: pointer;
+    }
+</style>
+<body>
+    <div class="container">
+        <div class="title">Show/Hide Password</div>
+        <form action="">
+            <div class="email">
+                <input type="text" placeholder="Email">
+            </div>
+            <div class="pass">
+                <input type="password" id="pass" class="active" placeholder="password" value="password">
+                <i class="fa fa-eye" id='icon'></i>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        var inputpsss = document.getElementById('pass'),
+            icon = document.getElementById('icon');
+
+        icon.onclick = function(){
+            if(inputpsss.className == 'active'){
+                inputpsss.setAttribute('type','text');
+                icon.className ='fa fa-eye';
+                inputpsss.className ='';
+            }else{
+                inputpsss.setAttribute('type','password');
+                icon.className ='fa fa-eye-slash';
+                inputpsss.className ='active';
+            }
+        }
+    </script>
+    
+</body>
+</html>
